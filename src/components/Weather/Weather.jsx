@@ -153,7 +153,7 @@ const Weather = () => {
           <CircularProgress />
         </Box>
       ) : weather ? (
-        <Card sx={{ marginTop: 4, backgroundColor: "beige" }}>
+        <Card sx={{ marginTop: 4, backgroundColor: "beige", width: '75%', margin: "0 auto" }}>
           <CardContent>
             <Typography
               variant="h5"
@@ -227,6 +227,34 @@ const Weather = () => {
                 <Typography variant="h6">Temperature</Typography>
                 <Typography variant="body1">
                   {kelvinToCelsius(weather.main.temp).toFixed(2)}°c
+                </Typography>
+              </Box>
+              <Box sx={{ flex: 1, color: "darkslategray" }}>
+                <Typography variant="h6">Forecast</Typography>
+                <Typography variant="body1">
+                  {weather.weather[0].description.toUpperCase()}
+                </Typography>
+              </Box>
+            </Box>
+
+            <Box
+              sx={{
+                display: "flex",
+                flexDirection: { xs: "column", sm: "row" },
+                gap: 4,
+                justifyContent: "space-evenly",
+              }}
+            >
+              <Box sx={{ flex: 1, color: "#ed7f27" }}>
+                <Typography variant="h6">Wind Speed</Typography>
+                <Typography variant="body1">
+                  {weather.wind.speed}%
+                </Typography>
+              </Box>
+              <Box sx={{ flex: 1, color: "red" }}>
+                <Typography variant="h6">Wind Direction</Typography>
+                <Typography variant="body1">
+                  {weather.wind.deg}
                 </Typography>
               </Box>
               <Box sx={{ flex: 1, color: "darkslategray" }}>
