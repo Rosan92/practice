@@ -3,6 +3,7 @@ import './App.css';
 // import Weather from './components/Weather/Weather';
 import React, { Suspense } from 'react';
 import { CircularProgress } from '@mui/material';
+import QR_Code from './components/QR_code/QR_Code';
 // import TodoApp from './components/Todo/TodoApp';
 
 const Weather = React.lazy(() => import("./components/Weather/Weather"));
@@ -13,7 +14,8 @@ function App() {
     <div>
       <Suspense fallback={<CircularProgress />}>
         {/* <Weather /> */}
-        <TodoApp />
+        {/* <TodoApp /> */}
+        <QR_Code />
       </Suspense>
     </div>
   );
