@@ -4,6 +4,7 @@ import './App.css';
 import React, { Suspense } from 'react';
 import { CircularProgress } from '@mui/material';
 import QR_Code from './components/QR_code/QR_Code';
+import Meme from './components/MemeCreator/Comproser';
 // import TodoApp from './components/Todo/TodoApp';
 
 const Weather = React.lazy(() => import("./components/Weather/Weather"));
@@ -15,7 +16,8 @@ function App() {
       <Suspense fallback={<CircularProgress />}>
         {/* <Weather /> */}
         {/* <TodoApp /> */}
-        <QR_Code />
+        {/* <QR_Code /> */}
+        <Meme />
       </Suspense>
     </div>
   );
